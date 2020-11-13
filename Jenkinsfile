@@ -17,9 +17,11 @@ pipeline {
         stage('Deploy start ') {
           steps {
             echo "Start the deploy .."
-            def props = readJSON file: 'hello.json'
-            props.each { key, value ->
-                echo "Walked through key $key and value $value"
+            script {
+              def props = readJSON file: 'hello.json'
+              props.each { key, value ->
+                  echo "Walked through key $key and value $value"
+              }
             }
           }
         }
