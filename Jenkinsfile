@@ -20,7 +20,7 @@ pipeline {
             script {
               def props = readJSON file: 'hello.json'
               props.each { key, value ->
-                  echo "Walked through key $key and value $value"
+                  echo "Walked through [key => value], [$key => $value]"
               }
             }
           }
