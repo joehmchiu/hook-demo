@@ -17,6 +17,8 @@ pipeline {
         stage('Deploy start ') {
           steps {
             echo "Start the deploy .."
+            def j = readJSON file: "./hello.json"
+            echo "${j}"
           }
         }
       }
